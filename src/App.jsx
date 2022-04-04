@@ -1,19 +1,21 @@
-import Moviesgrid from "./Moviesgrid";
-import styles from "./App.module.css"
+import { BrowserRouter, Route, Link, Routes } from "react-router-dom"; 
+import MovieDetails from "./pages/MovieDetails";
 
 function App() {
- return (
-  <div>
-   <header>
-    <h1 className={styles.title}>Movies</h1>
-   </header>
-   <main>
-    <ul>
-     <Moviesgrid></Moviesgrid>
-    </ul>
-   </main>
-  </div>
- )
+  return (
+   <BrowserRouter>
+      <header>
+       <Link to="/">Home</Link>
+       <Link to="/movie">Movie</Link>
+      </header>
+      <main>
+          <Routes>
+              <Route exact path="/"></Route>
+              <Route exact path="/movie" element={<MovieDetails></MovieDetails>}></Route>
+           </Routes>
+      </main>
+      </BrowserRouter>
+  );
 }
 
 export default App;
