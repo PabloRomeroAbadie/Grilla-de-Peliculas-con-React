@@ -1,17 +1,18 @@
+import styles from "./App.module.css"
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom"; 
+import LandingPage from "./pages/LandingPage";
 import MovieDetails from "./pages/MovieDetails";
 
 function App() {
   return (
    <BrowserRouter>
       <header>
-       <Link to="/">Home</Link>
-       <Link to="/movie">Movie</Link>
+       <Link to="/"><h1 className={styles.title}>Movies</h1></Link>
       </header>
       <main>
           <Routes>
-              <Route exact path="/"></Route>
-              <Route exact path="/movie" element={<MovieDetails></MovieDetails>}></Route>
+              <Route exact path="/" element={<LandingPage></LandingPage>}></Route>
+              <Route exact path="/movie/:movieId" element={<MovieDetails></MovieDetails>}></Route>
            </Routes>
       </main>
       </BrowserRouter>
