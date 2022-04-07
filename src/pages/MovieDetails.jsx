@@ -4,6 +4,7 @@ import styles from "./MovieDetails.module.css"
 import { get } from '../utils/httpClient';
 import Spinner from '../components/Spinner';
 
+
 const MovieDetails = () => {
  const { movieId } = useParams();
  const [ isLoading, setIsLoading] = useState(true); 

@@ -1,9 +1,13 @@
 import React from 'react';
 import Moviesgrid from '../components/Moviesgrid';
+import Search from '../components/Search';
 
 const LandingPage = () => {
  return (
-  <Moviesgrid></Moviesgrid>
+  <div>
+   <Search></Search>
+   <Moviesgrid></Moviesgrid>
+  </div>
  );
 };
 
