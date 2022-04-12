@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import styles from "./MovieDetails.module.css"
 import { get } from '../utils/httpClient';
 import Spinner from '../components/Spinner';
+import { getMovieImg } from '../utils/getMovieImg';
 
 
 const MovieDetails = () => {
@@ -25,7 +26,7 @@ const MovieDetails = () => {
 
  
 
- const imageUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+ const imageUrl = getMovieImg(movie.poster_path, 500);
  return (
   <div className={styles.detailsContainer}>
    <img className={`${styles.col} ${styles.movieImage}`} src={imageUrl} alt={movie.title} />
